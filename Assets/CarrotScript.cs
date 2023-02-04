@@ -11,13 +11,21 @@ public class CarrotScript : MonoBehaviour
     Vector2 MousePosition;
     Vector2 rightLimitPosition;
     Vector2 leftLimitPosition;
-    Vector2 maxLeftPosition;
-    Vector2 maxRightPosition;
+    [SerializeField] Vector2 maxLeftPosition;
+    [SerializeField] Vector2 maxRightPosition;
     float floorPosition;
     string direction;
 
     public bool isMouseDown = false;
     public bool isMouseIn = false;
+    private bool startedRunning = false;
+
+    private int runDirection;
+    private bool hasToLeft;
+    private bool hasToRight;
+
+    private bool stop = false;
+    private Vector2 destination;
 
 
 
@@ -28,10 +36,11 @@ public class CarrotScript : MonoBehaviour
         moveSpeed = Random.Range(2f, 5f);
         floorPosition = transform.position.y;
         direction = "right";
-        maxLeftPosition.x = 6.5f;
+        maxLeftPosition.x = 6.8f;
         maxLeftPosition.y = floorPosition;
-        maxRightPosition.x = 19;
+        maxRightPosition.x = 19f;
         maxRightPosition.y = floorPosition;
+        runDirection = Random.Range(0,2);
     }
 
     // Update is called once per frame
@@ -45,14 +54,32 @@ public class CarrotScript : MonoBehaviour
 
         if (GameController.Instance.isMixerScene)
         {
-            if (transform.position.x < MousePosition.x)
-            {
-                transform.position = Vector2.MoveTowards(transform.position, maxLeftPosition, moveSpeed * Time.deltaTime);
+            if(!startedRunning){
+                StartCoroutine(changeDirection());
+                startedRunning = true;
             }
-            else if (transform.position.x > MousePosition.x)
+
+            if ((transform.position.x >= MousePosition.x - 2 || transform.position.x >= MousePosition.x - 2.1) && transform.position.x <= MousePosition.x)
             {
-                transform.position = Vector2.MoveTowards(transform.position, maxRightPosition, moveSpeed * Time.deltaTime);
+                destination = maxLeftPosition;
+                stop = true;
             }
+            else if ((transform.position.x <= MousePosition.x + 2 || transform.position.x <= MousePosition.x + 2.1) && transform.position.x >= MousePosition.x)
+            {
+                destination = maxRightPosition;
+                stop = true;
+            }
+            else if (!stop){
+
+                if(runDirection == 1){
+                    destination = maxLeftPosition;
+                }
+                if(runDirection == 0) {
+                    destination = maxRightPosition;
+                }
+
+            }
+            transform.position = Vector2.MoveTowards(transform.position, destination, moveSpeed * Time.deltaTime);
         }
         else
         {
@@ -120,6 +147,21 @@ public class CarrotScript : MonoBehaviour
     void OnMouseExit()
     {
         isMouseIn = false;
+    }
+
+    IEnumerator changeDirection()
+    {
+        yield return new WaitForSeconds(Random.Range(2,3));
+        
+        stop = false;
+        runDirection = Random.Range(0,2);
+        
+        
+        
+        
+        
+        //have to add condition to stop the loop
+        StartCoroutine(changeDirection());
     }
 }
 
