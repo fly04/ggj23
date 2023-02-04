@@ -16,6 +16,8 @@ public class FallZone : MonoBehaviour
 
             //collisons du container (pour qu'il tombe dedans)
             parent.layer = 8;
+
+            CursorController.Instance.SetDefault();
         }
     }
 }

@@ -35,11 +35,6 @@ public class PlayOnDrag : MonoBehaviour
     [SerializeField] private float maxXSize;
     [SerializeField] private float maxYSize;
 
-    [Header("Cursor stuff")]
-    [SerializeField] private Texture2D cursorTexture;
-    private CursorMode cursorMode = CursorMode.Auto;
-    private Vector2 hotSpot = Vector2.zero;
-
     [Header("Misc/Debug stuff")]
     [SerializeField] private bool rewindOnUp;
 
@@ -49,7 +44,6 @@ public class PlayOnDrag : MonoBehaviour
     private int lastFrameIndex;
     private float distance;
     private bool isMouseDown = false;
-    private bool isMouseOn = false;
 
     void Start()
     {
@@ -72,7 +66,7 @@ public class PlayOnDrag : MonoBehaviour
         spriteRenderer.sprite = frames[frameIndex];
 
         if (changeCollider) handleCollider();
-        if (!isMouseOn && !isMouseDown) Cursor.SetCursor(null, Vector2.zero, cursorMode);
+        // if (!isMouseOn && !isMouseDown) Cursor.SetCursor(null, Vector2.zero, cursorMode);
     }
 
     void OnMouseDown()
@@ -95,17 +89,18 @@ public class PlayOnDrag : MonoBehaviour
 
     void OnMouseEnter()
     {
-        isMouseOn = true;
-        Cursor.SetCursor(cursorTexture, hotSpot, cursorMode);
+        CursorController.Instance.SetHandOpen();
     }
 
     void OnMouseExit()
     {
-        isMouseOn = false;
+        CursorController.Instance.SetDefault();
     }
 
     void handleDrag()
     {
+        CursorController.Instance.SetHandClosed();
+
         if (Input.GetMouseButtonDown(0))
         {
             startMousePosition = Input.mousePosition;
