@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 41b508061de45e4418cee5209d0be4d2
+guid: d0afb7aff7d1d074ea7b0f28f2fe0cd9
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -48,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 300
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -107,13 +107,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: PlantedCarrot_0
+      name: RunningCarrot_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 115
-        height: 139
+        width: 289.6
+        height: 290
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -121,20 +121,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ceb6f0a7676ed9e42ba220b42726b494
-      internalID: -1474008958
+      spriteID: 95859b0a29727a649b1e0f3c7ccbbaee
+      internalID: -1431291731
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PlantedCarrot_1
+      name: RunningCarrot_1
       rect:
         serializedVersion: 2
-        x: 115
+        x: 289
         y: 0
-        width: 115
-        height: 139
+        width: 289.6
+        height: 290
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -142,20 +142,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5b44c1a35f0293d41b5a99d32b24867f
-      internalID: 192607027
+      spriteID: 2a2595bbfc6cfb743b46d668f5ecd45c
+      internalID: -1983456763
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PlantedCarrot_2
+      name: RunningCarrot_2
       rect:
         serializedVersion: 2
-        x: 230
+        x: 578
         y: 0
-        width: 115
-        height: 139
+        width: 289.6
+        height: 290
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -163,20 +163,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 61e21b64eadcdb644be4bb12d2658742
-      internalID: 1944549977
+      spriteID: 91c5c2fac8b1a124095988d1d1f5712d
+      internalID: -616445444
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PlantedCarrot_3
+      name: RunningCarrot_3
       rect:
         serializedVersion: 2
-        x: 345
+        x: 867
         y: 0
-        width: 115
-        height: 139
+        width: 289.6
+        height: 290
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -184,20 +184,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c11a90cacc805a24f81a0dd0e17450e8
-      internalID: -123739267
+      spriteID: 3b1837fcbb1a98341a2658b8e64393fd
+      internalID: 932633623
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PlantedCarrot_4
+      name: RunningCarrot_4
       rect:
         serializedVersion: 2
-        x: 460
+        x: 1156
         y: 0
-        width: 115
-        height: 139
+        width: 289.6
+        height: 290
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -205,20 +205,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8daf5c01ace87ca439eccce459ea542c
-      internalID: -2065882800
+      spriteID: 8f1582869dd06c440873aab7d6e91eb4
+      internalID: 1023442948
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PlantedCarrot_5
+      name: RunningCarrot_5
       rect:
         serializedVersion: 2
-        x: 575
+        x: 1445
         y: 0
-        width: 115
-        height: 139
+        width: 289.6
+        height: 290
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -226,20 +226,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4f38e87a2c848134c84aa690c75ccaca
-      internalID: -151360250
+      spriteID: 339341d1bd0b0dd4a9356b347938dc37
+      internalID: 1334180249
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PlantedCarrot_6
+      name: RunningCarrot_6
       rect:
         serializedVersion: 2
-        x: 690
+        x: 1734
         y: 0
-        width: 115
-        height: 139
+        width: 289.6
+        height: 290
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -247,20 +247,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1f7ecad76eb86f14ea22dc536a10838d
-      internalID: 470837723
+      spriteID: 1129d3aa506a10745bb4c6276aaa58e8
+      internalID: -124020657
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PlantedCarrot_7
+      name: RunningCarrot_7
       rect:
         serializedVersion: 2
-        x: 805
+        x: 2023
         y: 0
-        width: 115
-        height: 139
+        width: 289.6
+        height: 290
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -268,20 +268,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fe937086853049e4fb3a42e13535a165
-      internalID: 544996307
+      spriteID: e28d5f802e2acc947b9e06d77ae0a9ce
+      internalID: -235502000
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PlantedCarrot_8
+      name: RunningCarrot_8
       rect:
         serializedVersion: 2
-        x: 920
+        x: 2312
         y: 0
-        width: 115
-        height: 139
+        width: 289.6
+        height: 290
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -289,20 +289,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5715c2a9c72351f4fad4ec5a5d8bc4a9
-      internalID: 1288178715
+      spriteID: 0be3c6006995c7f4bac7a95174455e10
+      internalID: -1687571706
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PlantedCarrot_9
+      name: RunningCarrot_9
       rect:
         serializedVersion: 2
-        x: 1035
+        x: 2601
         y: 0
-        width: 115
-        height: 139
+        width: 289.6
+        height: 290
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -310,8 +310,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ba75daaec7fea674ba250d7357cde3a5
-      internalID: -707885031
+      spriteID: a89ec536c04335f45a95afb23693db25
+      internalID: 834888468
       vertices: []
       indices: 
       edges: []
@@ -327,16 +327,16 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      PlantedCarrot_9: -707885031
-      PlantedCarrot_2: 1944549977
-      PlantedCarrot_4: -2065882800
-      PlantedCarrot_6: 470837723
-      PlantedCarrot_1: 192607027
-      PlantedCarrot_5: -151360250
-      PlantedCarrot_3: -123739267
-      PlantedCarrot_8: 1288178715
-      PlantedCarrot_0: -1474008958
-      PlantedCarrot_7: 544996307
+      RunningCarrot_0: -1431291731
+      RunningCarrot_3: 932633623
+      RunningCarrot_8: -1687571706
+      RunningCarrot_1: -1983456763
+      RunningCarrot_5: 1334180249
+      RunningCarrot_4: 1023442948
+      RunningCarrot_7: -235502000
+      RunningCarrot_6: -124020657
+      RunningCarrot_9: 834888468
+      RunningCarrot_2: -616445444
   spritePackingTag: 
   pSDRemoveMatte: 0
   userData: 

@@ -19,6 +19,13 @@ public class FallZone : MonoBehaviour
 
             CursorController.Instance.SetDefault();
             CursorController.Instance.canGrab = true;
+
+
+            if (parent.gameObject.tag == "HangingCarrot")
+            {
+                Debug.Log("HangingCarrot");
+                parent.GetComponent<HangingCarrotController>().hasBeenDropped = true;
+            }
         }
     }
 }

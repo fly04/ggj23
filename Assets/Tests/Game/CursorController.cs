@@ -41,7 +41,7 @@ public class CursorController : MonoBehaviour
                 //for each carrot
                 foreach (GameObject carrot in carrots)
                 {
-                    Debug.Log("Carrot: " + carrot.name);
+                    // Debug.Log("Carrot: " + carrot.name);
                     if (carrot.gameObject.GetComponent<CarrotScript>().isMouseIn || carrot.gameObject.GetComponent<CarrotScript>().isMouseDown)
                     {
                         isDefault = false;

@@ -38,23 +38,19 @@ public class GameController : MonoBehaviour
     void Start()
     {
         fsm = new StateMachine();
-        fsm.AddState("Scene1Fall", new State(
-            onLogic: (state) =>
+        fsm.AddState("Scene1Fall", new State());
+        fsm.AddState("Scene1Grow", new State(
+            onEnter: (state) =>
             {
-                if (scene1BackgroundController.isSeedPlanted && !plantedCarrot.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).IsName("GrowingCarrot"))
-                {
-                    plantedCarrot.GetComponent<Animator>().CrossFade("GrowingCarrot", 0.0f);
-                }
+                plantedCarrot.GetComponent<Animator>().CrossFade("GrowingCarrot", 0.0f);
             }
 
         ));
         fsm.AddState("Scene1DigUp", new State(
             onEnter: (state) =>
             {
-                // Make anim draggable and stop animator
-                plantedCarrot.GetComponent<Animator>().enabled = false;
-                plantedCarrot.GetComponent<PlayOnDrag>().enabled = true;
                 plantedCarrot.GetComponent<BoxCollider2D>().enabled = true;
+                plantedCarrot.GetComponent<PlayOnDrag>().enabled = true;
             }
         ));
         fsm.AddState("Scene1Hang", new State(
@@ -81,7 +77,8 @@ public class GameController : MonoBehaviour
             onExit: (state) => isMixerScene = false
         ));
 
-        fsm.AddTransition("Scene1Fall", "Scene1DigUp", transition => plantedCarrot.GetComponent<PlantedCarrotController>().hasGrown);
+        fsm.AddTransition("Scene1Fall", "Scene1Grow", transition => scene1BackgroundController.isSeedPlanted);
+        fsm.AddTransition("Scene1Grow", "Scene1DigUp", transition => plantedCarrot.GetComponent<PlantedCarrotController>().hasGrown);
         fsm.AddTransition("Scene1DigUp", "Scene1Hang", transition => plantedCarrot.GetComponent<PlantedCarrotController>().hasBeenDugUp);
         fsm.AddTransition("Scene1Hang", "Scene1Mixer", transition => Input.anyKeyDown);
 

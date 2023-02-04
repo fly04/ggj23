@@ -15,9 +15,6 @@ public class JointToMouse : MonoBehaviour
     private void Update()
     {
         mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        // transform.position = new Vector3(mousePosition.x, mousePosition.y, transform.position.z);
-
         joint.connectedAnchor = mousePosition;
-        // rb.AddForce(new Vector2(Random.Range(-1f, 1f), Random.Range(-1f, 1f)) * Input.GetAxis("Mouse X") * Time.deltaTime * 10);
     }
 }

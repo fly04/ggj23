@@ -15,9 +15,10 @@ GameObject:
   - component: {fileID: 7002460000536123539}
   - component: {fileID: 7355597011238153096}
   - component: {fileID: 5101096380974983486}
+  - component: {fileID: 1671022153292137689}
   m_Layer: 0
   m_Name: DraggableCarrot
-  m_TagString: Untagged
+  m_TagString: HangingCarrot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -31,8 +32,8 @@ Transform:
   m_GameObject: {fileID: 3516664177234758994}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0.345, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 1.3, y: 1.3, z: 1.3}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 4165117094635237516}
   m_Father: {fileID: 0}
@@ -79,7 +80,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 470837723, guid: 41b508061de45e4418cee5209d0be4d2, type: 3}
+  m_Sprite: {fileID: -62568293, guid: e9bbb98cd225ec8429946cfc11f622ac, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -157,7 +158,7 @@ Animator:
   m_GameObject: {fileID: 3516664177234758994}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 2f2bea64d108d0f4d80fe5671a30b4e8, type: 2}
+  m_Controller: {fileID: 9100000, guid: 13430ad6482135f4084c1f32fe9a1aba, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -180,9 +181,22 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.0029045045, y: -0.08316684}
-  m_Size: {x: 0.39864862, y: 1.1169617}
+  m_Offset: {x: 0.020029683, y: -0.15800484}
+  m_Size: {x: 0.34795174, y: 0.57619613}
   m_Direction: 0
+--- !u!114 &1671022153292137689
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3516664177234758994}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a045597ff5bfb9e469b9fdf187b89bca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hasBeenDropped: 0
 --- !u!1 &5611398629186644149
 GameObject:
   m_ObjectHideFlags: 0
