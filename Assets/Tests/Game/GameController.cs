@@ -66,7 +66,7 @@ public class GameController : MonoBehaviour
 
                 for (int i = 0; i < 5; i++)
                 {
-                    Instantiate(runningCarrot, new Vector3(-Random.Range(-7, -10), -1.6f, 0), Quaternion.identity);
+                    Instantiate(runningCarrot, new Vector3(Random.Range(-7, -10), -1.6f, 0), Quaternion.identity);
                 }
             }
         ));
@@ -74,7 +74,7 @@ public class GameController : MonoBehaviour
         fsm.AddState("Scene1Mixer", new State(
             onEnter: (state) =>
             {
-                isMixerScene = true;
+                StartCoroutine(setIsInMixerScene());
                 CursorController.Instance.mustHandleCarrots = true;
                 cameraController.moveToNextScreen();
             },
@@ -92,6 +92,12 @@ public class GameController : MonoBehaviour
     void Update()
     {
         fsm.OnLogic();
+    }
+
+    IEnumerator setIsInMixerScene()
+    {
+        yield return new WaitForSeconds(1.0f);
+        isMixerScene = true;
     }
 
 }
