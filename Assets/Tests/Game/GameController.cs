@@ -7,10 +7,15 @@ public class GameController : MonoBehaviour
 {
     private StateMachine fsm;
 
+    [Header("References")]
+    [SerializeField] private CameraController cameraController;
+
     /* SCENE 1 STUFF */
+    [Header("Scene 1 Stuff")]
     [SerializeField] private Scene1BackgroundController scene1BackgroundController;
     [SerializeField] private GameObject plantedCarrot;
     [SerializeField] private float hangingCarrotOffset;
+    [SerializeField] private GameObject carrotPrefab;
 
     // Start is called before the first frame update
     void Start()
@@ -29,6 +34,7 @@ public class GameController : MonoBehaviour
         fsm.AddState("Scene1DigUp", new State(
             onEnter: (state) =>
             {
+                // Make anim draggable and stop animator
                 plantedCarrot.GetComponent<Animator>().enabled = false;
                 plantedCarrot.GetComponent<PlayOnDrag>().enabled = true;
                 plantedCarrot.GetComponent<BoxCollider2D>().enabled = true;
@@ -37,21 +43,23 @@ public class GameController : MonoBehaviour
         fsm.AddState("Scene1Hang", new State(
             onEnter: (state) =>
             {
-                plantedCarrot.GetComponent<PlayOnDrag>().enabled = false;
-                plantedCarrot.GetComponent<BoxCollider2D>().enabled = false;
-                plantedCarrot.GetComponent<Animator>().enabled = true;
-                plantedCarrot.GetComponent<Animator>().CrossFade("HangingCarrot", 0.0f);
+                Instantiate(carrotPrefab, plantedCarrot.transform.position, Quaternion.identity);
+                Destroy(plantedCarrot);
             },
-            onLogic: (state) =>
+            onExit: (state) => Debug.Log("Scene 1 Hang Exit")
+        ));
+
+        fsm.AddState("Scene1Mixer", new State(
+            onEnter: (state) =>
             {
-                //make plantedCarrot follow cursor
-                Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-                plantedCarrot.transform.position = new Vector3(mousePos.x, mousePos.y + hangingCarrotOffset, plantedCarrot.transform.position.z);
+                cameraController.moveToNextScreen();
+
             }
         ));
 
         fsm.AddTransition("Scene1Fall", "Scene1DigUp", transition => plantedCarrot.GetComponent<PlantedCarrotController>().hasGrown);
         fsm.AddTransition("Scene1DigUp", "Scene1Hang", transition => plantedCarrot.GetComponent<PlantedCarrotController>().hasBeenDugUp);
+        fsm.AddTransition("Scene1Hang", "Scene1Mixer", transition => Input.anyKeyDown);
 
         fsm.Init();
     }
@@ -61,4 +69,5 @@ public class GameController : MonoBehaviour
     {
         fsm.OnLogic();
     }
+
 }
