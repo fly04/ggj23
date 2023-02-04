@@ -49,7 +49,7 @@ public class GameController : MonoBehaviour
 
                 for (int i = 0; i < 5; i++)
                 {
-                    Instantiate(runningCarrot, new Vector3(-7, -1, 0), Quaternion.identity);
+                    Instantiate(runningCarrot, new Vector3(-Random.Range(-7,-10), -1, 0), Quaternion.identity);
                 }
             },
             onExit: (state) => Debug.Log("Scene 1 Hang Exit")
