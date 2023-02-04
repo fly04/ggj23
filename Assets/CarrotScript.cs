@@ -14,6 +14,9 @@ public class CarrotScript : MonoBehaviour
     float floorPosition;
     string direction;
 
+    public bool isMouseDown = false;
+    public bool isMouseIn = false;
+
 
 
     // Start is called before the first frame update
@@ -64,14 +67,37 @@ public class CarrotScript : MonoBehaviour
             transform.position = Vector2.MoveTowards(transform.position, MousePosition, moveSpeed * Time.deltaTime);
         }
 
-
-
+        //Cursor stuff
+        if (CursorController.Instance.canGrab)
+        {
+            if (isMouseIn && !isMouseDown) CursorController.Instance.SetHandOpen();
+            if (isMouseIn && isMouseDown) CursorController.Instance.SetHandClosed();
+        }
     }
 
     private void OnMouseDown()
     {
+        isMouseDown = true;
+
+        if (!CursorController.Instance.canGrab) return;
+        CursorController.Instance.canGrab = false;
         Instantiate(draggableCarrot, transform.position, Quaternion.identity);
         Destroy(gameObject);
+    }
+
+    void OnMouseUp()
+    {
+        isMouseDown = false;
+    }
+
+    void OnMouseEnter()
+    {
+        isMouseIn = true;
+    }
+
+    void OnMouseExit()
+    {
+        isMouseIn = false;
     }
 }
 

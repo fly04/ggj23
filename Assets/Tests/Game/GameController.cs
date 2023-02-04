@@ -5,6 +5,9 @@ using FSM;
 
 public class GameController : MonoBehaviour
 {
+
+    public static GameController Instance { get; private set; }
+
     private StateMachine fsm;
 
     [Header("References")]
@@ -17,8 +20,21 @@ public class GameController : MonoBehaviour
     [SerializeField] private float hangingCarrotOffset;
     [SerializeField] private GameObject draggableCarrot;
     [SerializeField] private GameObject runningCarrot;
+    bool isMixerScene = false;
 
-    // Start is called before the first frame update
+
+    void Awake()
+    {
+        if (Instance != null && Instance != this)
+        {
+            Destroy(this);
+        }
+        else
+        {
+            Instance = this;
+        }
+    }
+
     void Start()
     {
         fsm = new StateMachine();
@@ -45,23 +61,23 @@ public class GameController : MonoBehaviour
             onEnter: (state) =>
             {
                 Instantiate(draggableCarrot, plantedCarrot.transform.position, Quaternion.identity);
-
                 Destroy(plantedCarrot);
+                CursorController.Instance.canGrab = false;
 
                 for (int i = 0; i < 5; i++)
                 {
                     Instantiate(runningCarrot, new Vector3(-Random.Range(-7, -10), -1, 0), Quaternion.identity);
                 }
-            },
-            onExit: (state) => Debug.Log("Scene 1 Hang Exit")
+            }
         ));
 
         fsm.AddState("Scene1Mixer", new State(
             onEnter: (state) =>
             {
+                isMixerScene = true;
                 cameraController.moveToNextScreen();
-
-            }
+            },
+            onExit: (state) => isMixerScene = false
         ));
 
         fsm.AddTransition("Scene1Fall", "Scene1DigUp", transition => plantedCarrot.GetComponent<PlantedCarrotController>().hasGrown);

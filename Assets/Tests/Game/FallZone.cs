@@ -18,6 +18,7 @@ public class FallZone : MonoBehaviour
             parent.layer = 8;
 
             CursorController.Instance.SetDefault();
+            CursorController.Instance.canGrab = true;
         }
     }
 }

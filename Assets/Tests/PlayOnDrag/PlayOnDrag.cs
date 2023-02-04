@@ -79,7 +79,6 @@ public class PlayOnDrag : MonoBehaviour
     void OnMouseDown()
     {
         isMouseDown = true;
-
     }
 
     void OnMouseUp()
@@ -91,19 +90,16 @@ public class PlayOnDrag : MonoBehaviour
         {
             if (frameIndex != frames.Length - 1) StartCoroutine(rewindAnimation());
         }
-
     }
 
     void OnMouseEnter()
     {
         isMouseIn = true;
-        // CursorController.Instance.SetHandOpen();
     }
 
     void OnMouseExit()
     {
         isMouseIn = false;
-        // CursorController.Instance.SetDefault();
     }
 
     void handleDrag()
