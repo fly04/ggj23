@@ -11,6 +11,8 @@ public class CarrotScript : MonoBehaviour
     Vector2 MousePosition;
     Vector2 rightLimitPosition;
     Vector2 leftLimitPosition;
+    Vector2 maxLeftPosition;
+    Vector2 maxRightPosition;
     float floorPosition;
     string direction;
 
@@ -26,6 +28,10 @@ public class CarrotScript : MonoBehaviour
         moveSpeed = Random.Range(2f, 5f);
         floorPosition = transform.position.y;
         direction = "right";
+        maxLeftPosition.x = 6.5f;
+        maxLeftPosition.y = floorPosition;
+        maxRightPosition.x = 19;
+        maxRightPosition.y = floorPosition;
     }
 
     // Update is called once per frame
@@ -36,36 +42,52 @@ public class CarrotScript : MonoBehaviour
         MousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         MousePosition.y = floorPosition;
 
-        rightLimitPosition = MousePosition;
-        rightLimitPosition.x += 2;
-        leftLimitPosition = MousePosition;
-        leftLimitPosition.x -= 2;
 
-
-        if (transform.position.x <= MousePosition.x - 2 || transform.position.x <= MousePosition.x - 1.5)
+        if (GameController.Instance.isMixerScene)
         {
-            direction = "right";
-        }
-        if (transform.position.x >= MousePosition.x + 2 || transform.position.x >= MousePosition.x + 1.5)
-        {
-            direction = "left";
-        }
-
-        if (transform.position.x >= MousePosition.x - 2 && transform.position.x <= MousePosition.x + 2)
-        {
-            if (direction == "left")
+            if (transform.position.x < MousePosition.x)
             {
-                transform.position = Vector2.MoveTowards(transform.position, leftLimitPosition, moveSpeed * Time.deltaTime);
+                transform.position = Vector2.MoveTowards(transform.position, maxLeftPosition, moveSpeed * Time.deltaTime);
             }
-            if (direction == "right")
+            else if (transform.position.x > MousePosition.x)
             {
-                transform.position = Vector2.MoveTowards(transform.position, rightLimitPosition, moveSpeed * Time.deltaTime);
+                transform.position = Vector2.MoveTowards(transform.position, maxRightPosition, moveSpeed * Time.deltaTime);
             }
-
         }
         else
         {
-            transform.position = Vector2.MoveTowards(transform.position, MousePosition, moveSpeed * Time.deltaTime);
+
+            rightLimitPosition = MousePosition;
+            rightLimitPosition.x += 2;
+            leftLimitPosition = MousePosition;
+            leftLimitPosition.x -= 2;
+
+
+            if (transform.position.x <= MousePosition.x - 2 || transform.position.x <= MousePosition.x - 1.5)
+            {
+                direction = "right";
+            }
+            if (transform.position.x >= MousePosition.x + 2 || transform.position.x >= MousePosition.x + 1.5)
+            {
+                direction = "left";
+            }
+
+            if (transform.position.x >= MousePosition.x - 2 && transform.position.x <= MousePosition.x + 2)
+            {
+                if (direction == "left")
+                {
+                    transform.position = Vector2.MoveTowards(transform.position, leftLimitPosition, moveSpeed * Time.deltaTime);
+                }
+                if (direction == "right")
+                {
+                    transform.position = Vector2.MoveTowards(transform.position, rightLimitPosition, moveSpeed * Time.deltaTime);
+                }
+
+            }
+            else
+            {
+                transform.position = Vector2.MoveTowards(transform.position, MousePosition, moveSpeed * Time.deltaTime);
+            }
         }
 
         //Cursor stuff

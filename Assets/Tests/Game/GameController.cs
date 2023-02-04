@@ -20,7 +20,7 @@ public class GameController : MonoBehaviour
     [SerializeField] private float hangingCarrotOffset;
     [SerializeField] private GameObject draggableCarrot;
     [SerializeField] private GameObject runningCarrot;
-    bool isMixerScene = false;
+    public bool isMixerScene = false;
 
 
     void Awake()
