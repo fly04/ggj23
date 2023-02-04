@@ -372,6 +372,7 @@ MonoBehaviour:
   - {fileID: -1770434167, guid: 9df25089d96e4134e8750d8315c964f3, type: 3}
   distanceThreshold: 10
   dirToDrag: 0
+  changeCollider: 1
   boxCollider: {fileID: 0}
   minXOffset: 0
   minYOffset: -0.1357912
