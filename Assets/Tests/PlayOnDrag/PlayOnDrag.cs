@@ -44,6 +44,7 @@ public class PlayOnDrag : MonoBehaviour
     private int lastFrameIndex;
     private float distance;
     private bool isMouseDown = false;
+    private bool isMouseIn = false;
 
     void Start()
     {
@@ -65,8 +66,14 @@ public class PlayOnDrag : MonoBehaviour
         }
         spriteRenderer.sprite = frames[frameIndex];
 
+        if (isMouseIn && !isMouseDown) CursorController.Instance.SetHandOpen();
+
+        if (isMouseIn && isMouseDown) CursorController.Instance.SetHandClosed();
+
+        if (!isMouseIn && !isMouseDown) CursorController.Instance.SetDefault();
+
+
         if (changeCollider) handleCollider();
-        // if (!isMouseOn && !isMouseDown) Cursor.SetCursor(null, Vector2.zero, cursorMode);
     }
 
     void OnMouseDown()
@@ -89,17 +96,19 @@ public class PlayOnDrag : MonoBehaviour
 
     void OnMouseEnter()
     {
-        CursorController.Instance.SetHandOpen();
+        isMouseIn = true;
+        // CursorController.Instance.SetHandOpen();
     }
 
     void OnMouseExit()
     {
-        CursorController.Instance.SetDefault();
+        isMouseIn = false;
+        // CursorController.Instance.SetDefault();
     }
 
     void handleDrag()
     {
-        CursorController.Instance.SetHandClosed();
+        // CursorController.Instance.SetHandClosed();
 
         if (Input.GetMouseButtonDown(0))
         {

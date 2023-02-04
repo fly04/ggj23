@@ -6,10 +6,10 @@ public class CursorController : MonoBehaviour
 {
     public static CursorController Instance { get; private set; }
 
-
     [SerializeField] private Texture2D cursorTexture;
     [SerializeField] private Texture2D handOpenTexture;
     [SerializeField] private Texture2D handClosedTexture;
+    [SerializeField] public bool canGrab = true;
 
     private void Awake()
     {
