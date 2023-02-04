@@ -5,9 +5,9 @@ using UnityEngine;
 public class CarrotScript : MonoBehaviour
 {
 
-    public float moveSpeed;
-    //private bool isTriggered = false;
+    [SerializeField] private GameObject draggableCarrot;
 
+    public float moveSpeed;
     Vector2 MousePosition;
     Vector2 rightLimitPosition;
     Vector2 leftLimitPosition;
@@ -27,6 +27,7 @@ public class CarrotScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
 
         MousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         MousePosition.y = floorPosition;
@@ -67,4 +68,10 @@ public class CarrotScript : MonoBehaviour
 
     }
 
+    private void OnMouseDown()
+    {
+        Instantiate(draggableCarrot, transform.position, Quaternion.identity);
+        Destroy(gameObject);
+    }
 }
+
