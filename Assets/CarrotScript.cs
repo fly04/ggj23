@@ -7,7 +7,7 @@ public class CarrotScript : MonoBehaviour
 
     [SerializeField] private GameObject draggableCarrot;
 
-    public float moveSpeed;
+    [SerializeField] public float moveSpeed;
     Vector2 MousePosition;
     Vector2 rightLimitPosition;
     Vector2 leftLimitPosition;
@@ -22,7 +22,8 @@ public class CarrotScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        moveSpeed = Random.Range(2, 5);
+        //random float between 2 values
+        moveSpeed = Random.Range(2f, 5f);
         floorPosition = transform.position.y;
         direction = "right";
     }
@@ -71,7 +72,6 @@ public class CarrotScript : MonoBehaviour
         if (CursorController.Instance.canGrab)
         {
             if (isMouseIn && !isMouseDown) CursorController.Instance.SetHandOpen();
-            if (isMouseIn && isMouseDown) CursorController.Instance.SetHandClosed();
         }
     }
 

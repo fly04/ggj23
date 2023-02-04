@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 5101096380974983486}
   m_Layer: 0
   m_Name: DraggableCarrot
-  m_TagString: Carrot
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -180,8 +180,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.010750353, y: 0}
-  m_Size: {x: 0.58381236, y: 1.39}
+  m_Offset: {x: -0.0029045045, y: -0.08316684}
+  m_Size: {x: 0.39864862, y: 1.1169617}
   m_Direction: 0
 --- !u!1 &5611398629186644149
 GameObject:

@@ -11,9 +11,8 @@ public class CursorController : MonoBehaviour
     [SerializeField] private Texture2D handClosedTexture;
     [SerializeField] public bool canGrab = true;
 
-    bool mustHandleCarrots = false;
+    public bool mustHandleCarrots = false;
     GameObject[] carrots;
-    bool mouseIn = false;
 
     private void Awake()
     {
@@ -30,24 +29,33 @@ public class CursorController : MonoBehaviour
     private void Update()
     {
 
+
         if (mustHandleCarrots)
         {
-            //Find gameObject by tag
-            carrots = GameObject.FindGameObjectsWithTag("Carrot");
-
-            bool isDefault = true;
-            //for each carrot
-            foreach (GameObject carrot in carrots)
+            if (canGrab)
             {
-                if (carrot.GetComponent<CarrotScript>().isMouseIn || carrot.GetComponent<CarrotScript>().isMouseDown)
+                //Find gameObject by tag
+                carrots = GameObject.FindGameObjectsWithTag("RunningCarrot");
+
+                bool isDefault = true;
+                //for each carrot
+                foreach (GameObject carrot in carrots)
                 {
-                    isDefault = false;
+                    Debug.Log("Carrot: " + carrot.name);
+                    if (carrot.gameObject.GetComponent<CarrotScript>().isMouseIn || carrot.gameObject.GetComponent<CarrotScript>().isMouseDown)
+                    {
+                        isDefault = false;
+                    }
+                }
+
+                if (isDefault)
+                {
+                    SetDefault();
                 }
             }
-
-            if (isDefault)
+            else
             {
-                SetDefault();
+                SetHandClosed();
             }
         }
     }

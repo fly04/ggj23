@@ -12,10 +12,10 @@ GameObject:
   - component: {fileID: 6189199416782070304}
   - component: {fileID: 7355597011238153096}
   - component: {fileID: 5388042403137671434}
-  - component: {fileID: -8818389629569530570}
+  - component: {fileID: 6994567121978337187}
   m_Layer: 0
   m_Name: RunningCarrot
-  m_TagString: Carrot
+  m_TagString: RunningCarrot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -121,8 +121,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   draggableCarrot: {fileID: 3516664177234758994, guid: c0ac2fff286a08e4ca5ff5f06e9dc9a9, type: 3}
   moveSpeed: 0
---- !u!61 &-8818389629569530570
-BoxCollider2D:
+  isMouseDown: 0
+  isMouseIn: 0
+--- !u!70 &6994567121978337187
+CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -134,16 +136,6 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.0029465705, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.15, y: 1.39}
-    newSize: {x: 1.15, y: 1.39}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.58425343, y: 1.39}
-  m_EdgeRadius: 0
+  m_Offset: {x: -0.0029465556, y: -0.060405254}
+  m_Size: {x: 0.43103063, y: 1.127753}
+  m_Direction: 0
