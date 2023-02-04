@@ -55,12 +55,12 @@ public class CarrotScript : MonoBehaviour
                 startedRunning = true;
             }
 
-            if ((transform.position.x >= MousePosition.x - 2 || transform.position.x >= MousePosition.x - 2.1) && transform.position.x <= MousePosition.x)
+            if (transform.position.x >= maxRightPosition.x)
             {
                 destination = maxLeftPosition;
                 stop = true;
             }
-            else if ((transform.position.x <= MousePosition.x + 2 || transform.position.x <= MousePosition.x + 2.1) && transform.position.x >= MousePosition.x)
+            else if (transform.position.x <= maxLeftPosition.x)
             {
                 destination = maxRightPosition;
                 stop = true;
