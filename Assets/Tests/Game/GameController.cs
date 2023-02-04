@@ -20,6 +20,7 @@ public class GameController : MonoBehaviour
     [SerializeField] private float hangingCarrotOffset;
     [SerializeField] private GameObject draggableCarrot;
     [SerializeField] private GameObject runningCarrot;
+    [SerializeField] private GameObject runningBaby;
     public bool isMixerScene = false;
 
 
@@ -60,10 +61,15 @@ public class GameController : MonoBehaviour
                 Destroy(plantedCarrot);
                 CursorController.Instance.canGrab = false;
 
-                for (int i = 0; i < 5; i++)
+                for (int i = 0; i < 3; i++)
                 {
                     Instantiate(runningCarrot, new Vector3(Random.Range(-7, -10), -1.6f, 0), Quaternion.identity);
                 }
+                for (int i = 0; i < 2; i++)
+                {
+                    Instantiate(runningBaby, new Vector3(Random.Range(-7, -10), -1.6f, 0), Quaternion.identity);
+                }
+
             }
         ));
 

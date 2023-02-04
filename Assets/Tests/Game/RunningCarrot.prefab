@@ -121,6 +121,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   draggableCarrot: {fileID: 3516664177234758994, guid: c0ac2fff286a08e4ca5ff5f06e9dc9a9, type: 3}
   moveSpeed: 0
+  maxMoveSpeed: 3
+  minMoveSpeed: 4
   isMouseDown: 0
   isMouseIn: 0
 --- !u!70 &6994567121978337187

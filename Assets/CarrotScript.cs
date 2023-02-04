@@ -8,6 +8,8 @@ public class CarrotScript : MonoBehaviour
     [SerializeField] private GameObject draggableCarrot;
 
     [SerializeField] public float moveSpeed;
+    [SerializeField] public float maxMoveSpeed;
+    [SerializeField] public float minMoveSpeed;
     Vector2 MousePosition;
     Vector2 rightLimitPosition;
     Vector2 leftLimitPosition;
@@ -25,7 +27,7 @@ public class CarrotScript : MonoBehaviour
     void Start()
     {
         //random float between 2 values
-        moveSpeed = Random.Range(2f, 5f);
+        moveSpeed = Random.Range(minMoveSpeed, maxMoveSpeed);
         floorPosition = transform.position.y;
         direction = "right";
         maxLeftPosition.x = 6.5f;
