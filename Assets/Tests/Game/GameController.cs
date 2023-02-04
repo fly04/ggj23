@@ -15,7 +15,8 @@ public class GameController : MonoBehaviour
     [SerializeField] private Scene1BackgroundController scene1BackgroundController;
     [SerializeField] private GameObject plantedCarrot;
     [SerializeField] private float hangingCarrotOffset;
-    [SerializeField] private GameObject carrotPrefab;
+    [SerializeField] private GameObject draggableCarrot;
+    [SerializeField] private GameObject runningCarrot;
 
     // Start is called before the first frame update
     void Start()
@@ -43,8 +44,13 @@ public class GameController : MonoBehaviour
         fsm.AddState("Scene1Hang", new State(
             onEnter: (state) =>
             {
-                Instantiate(carrotPrefab, plantedCarrot.transform.position, Quaternion.identity);
+                Instantiate(draggableCarrot, plantedCarrot.transform.position, Quaternion.identity);
                 Destroy(plantedCarrot);
+
+                for (int i = 0; i < 5; i++)
+                {
+                    Instantiate(runningCarrot, new Vector3(-7, -1, 0), Quaternion.identity);
+                }
             },
             onExit: (state) => Debug.Log("Scene 1 Hang Exit")
         ));
