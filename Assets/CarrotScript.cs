@@ -46,12 +46,8 @@ public class CarrotScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-
         MousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         MousePosition.y = floorPosition;
-
-
         if (GameController.Instance.isMixerScene)
         {
             if(!startedRunning){
@@ -116,6 +112,17 @@ public class CarrotScript : MonoBehaviour
                 transform.position = Vector2.MoveTowards(transform.position, MousePosition, moveSpeed * Time.deltaTime);
             }
         }
+
+        //Anim stuff
+        if (direction == "right")
+        {
+            transform.localScale = new Vector3(-1.4f, 1.4f, 1.4f);
+        }
+        if (direction == "left")
+        {
+            transform.localScale = new Vector3(1.4f, 1.4f, 1.4f);
+        }
+
 
         //Cursor stuff
         if (CursorController.Instance.canGrab)
