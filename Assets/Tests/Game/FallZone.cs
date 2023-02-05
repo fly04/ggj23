@@ -26,6 +26,8 @@ public class FallZone : MonoBehaviour
 
             if (parent.gameObject.tag == "HangingCarrot")
             {
+                //set order in layer
+                parent.GetComponent<SpriteRenderer>().sortingOrder = 2;
                 parent.GetComponent<HangingCarrotController>().hasBeenDropped = true;
                 GameController.Instance.hasDroppedCarrot = true;
                 GameController.Instance.droppedCount++;
