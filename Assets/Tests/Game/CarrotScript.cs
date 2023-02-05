@@ -50,7 +50,7 @@ public class CarrotScript : MonoBehaviour
     void Update()
     {
         MousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        
+
         if (GameController.Instance.isMixerScene)
         {
             if (!startedRunning)
@@ -93,7 +93,7 @@ public class CarrotScript : MonoBehaviour
                 }
 
             }
-            
+
             transform.position = Vector2.MoveTowards(transform.position, destination, moveSpeed * Time.deltaTime);
         }
         else
@@ -163,7 +163,7 @@ public class CarrotScript : MonoBehaviour
 
         if (GameController.Instance.hasDroppedCarrot && !GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).IsName("Flee"))
         {
-            Debug.Log("Fleeing");
+            // Debug.Log("Fleeing");
             GetComponent<Animator>().CrossFade("Flee", 0.0f);
         }
 

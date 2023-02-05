@@ -28,6 +28,9 @@ public class GameController : MonoBehaviour
     public bool hasDroppedCarrot = false;
     public int droppedCount = 0;
 
+    bool toFillMixer = false;
+    bool toSmasher = false;
+
 
     void Awake()
     {
@@ -75,6 +78,7 @@ public class GameController : MonoBehaviour
                     Instantiate(runningBaby, new Vector3(Random.Range(-7, -10), -1.6f, 0), Quaternion.identity);
                 }
                 Instantiate(runningFatty, new Vector3(Random.Range(-7, -10), -1.6f, 0), Quaternion.identity);
+                StartCoroutine(goToFillMixer());
             }
         ));
 
@@ -105,6 +109,18 @@ public class GameController : MonoBehaviour
             {
                 Debug.Log("PickUpBowl");
                 Instantiate(clickableBowlPrefab, new Vector3(15.973f, -1.254f, 0), Quaternion.identity);
+                StartCoroutine(goToSmasher());
+            },
+            onExit: (state) =>
+            {
+                cameraController.moveToNextScreen();
+            }
+        ));
+
+        fsm.AddState("Smasher", new State(
+            onEnter: (state) =>
+            {
+                Debug.Log("Smasher enter");
             }
         ));
 
@@ -112,8 +128,10 @@ public class GameController : MonoBehaviour
         fsm.AddTransition("Scene1Grow", "Scene1DigUp", transition => plantedCarrot.GetComponent<PlantedCarrotController>().hasGrown);
         fsm.AddTransition("Scene1DigUp", "Scene1Hang", transition => plantedCarrot.GetComponent<PlantedCarrotController>().hasBeenDugUp);
         fsm.AddTransition("Scene1Hang", "Scene1FillMixer", transition => Input.anyKeyDown);
+        fsm.AddTransition("Scene1Hang", "Scene1FillMixer", transition => toFillMixer);
         fsm.AddTransition("Scene1FillMixer", "Scene1MixerMix", transition => droppedCount == 6);
         fsm.AddTransition("Scene1MixerMix", "PickUpBowl", transition => mixerController.isMixDone);
+        fsm.AddTransition("PickUpBowl", "Smasher", transition => toSmasher);
 
         fsm.Init();
     }
@@ -130,10 +148,21 @@ public class GameController : MonoBehaviour
         isMixerScene = true;
     }
 
+    IEnumerator goToFillMixer()
+    {
+        yield return new WaitForSeconds(10.0f);
+        toFillMixer = true;
+    }
+
     IEnumerator waitForMixing()
     {
         yield return new WaitForSeconds(1.0f);
         mixerController.mix();
     }
 
+    IEnumerator goToSmasher()
+    {
+        yield return new WaitForSeconds(3.0f);
+        toSmasher = true;
+    }
 }
