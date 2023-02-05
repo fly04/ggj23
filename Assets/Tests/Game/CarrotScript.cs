@@ -206,10 +206,6 @@ public class CarrotScript : MonoBehaviour
         stop = false;
         runDirection = Random.Range(0, 2);
 
-
-
-
-
         //have to add condition to stop the loop
         StartCoroutine(changeDirection());
     }
