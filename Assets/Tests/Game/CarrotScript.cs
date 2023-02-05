@@ -190,7 +190,7 @@ public class CarrotScript : MonoBehaviour
     private void OnMouseDown()
     {
         isMouseDown = true;
-        footsteps.Play();
+        // footsteps.Play();
         if (!CursorController.Instance.canGrab) return;
         CursorController.Instance.canGrab = false;
         Instantiate(draggableCarrot, transform.position, Quaternion.identity);
