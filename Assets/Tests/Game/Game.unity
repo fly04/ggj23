@@ -322,6 +322,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cameraController: {fileID: 253108138}
+  mixerController: {fileID: 1919461285}
+  bowlPrefab: {fileID: 4807360905210845934, guid: 8af4bfac33b26b4448c14bab29b1b71c, type: 3}
   scene1BackgroundController: {fileID: 2001736236}
   plantedCarrot: {fileID: 1616559945}
   hangingCarrotOffset: 0
@@ -702,6 +704,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1919461284}
   - component: {fileID: 1919461283}
+  - component: {fileID: 1919461286}
+  - component: {fileID: 1919461285}
   m_Layer: 0
   m_Name: Mixer
   m_TagString: Untagged
@@ -750,7 +754,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: -1
-  m_Sprite: {fileID: 21300000, guid: de51c81479d47994e9e63b0650c5e93f, type: 3}
+  m_Sprite: {fileID: 1737528804, guid: 53a75c46785656f4ba3272dfa2217f5c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -778,6 +782,39 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1919461285
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1919461281}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 271edb8df89809b4493a25cbb242becb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isMixDone: 0
+--- !u!95 &1919461286
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1919461281}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 82c15bc988890c042af9eb71a5fb90de, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1990232640
 GameObject:
   m_ObjectHideFlags: 0

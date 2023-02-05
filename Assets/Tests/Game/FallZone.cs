@@ -23,7 +23,6 @@ public class FallZone : MonoBehaviour
 
             if (parent.gameObject.tag == "HangingCarrot")
             {
-                Debug.Log("HangingCarrot");
                 parent.GetComponent<HangingCarrotController>().hasBeenDropped = true;
                 GameController.Instance.hasDroppedCarrot = true;
                 GameController.Instance.droppedCount++;
