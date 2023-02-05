@@ -64,6 +64,10 @@ PrefabInstance:
       propertyPath: minMoveSpeed
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 5388042403137671434, guid: 801430f2075e7d34d83568bce3425410, type: 3}
+      propertyPath: draggableCarrot
+      value: 
+      objectReference: {fileID: 6040892910427410811, guid: a7f1fd18984056a40b0400d8943b1356, type: 3}
     - target: {fileID: 6189199416782070304, guid: 801430f2075e7d34d83568bce3425410, type: 3}
       propertyPath: m_Size.x
       value: 0.965

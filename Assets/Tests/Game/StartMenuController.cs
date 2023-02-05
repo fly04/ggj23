@@ -16,25 +16,23 @@ public class StartMenuController : MonoBehaviour
         Debug.Log("Begin");
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     private void OnMouseDown()
     {
-        Debug.Log("Started!");
-        StartCoroutine(startTheGame());
-        cameraController.moveToFirstScreen();
-        
+        Debug.Log("Button pressed!");
+        GetComponent<Animator>().CrossFade("ButtonDown", 0.0f);
+        StartCoroutine(waitForButton());
     }
 
-     IEnumerator startTheGame()
+    IEnumerator waitForButton()
     {
+        yield return new WaitForSeconds(.3f);
+        GetComponent<Animator>().CrossFade("ButtonUp", 0.0f);
+        yield return new WaitForSeconds(.4f);
+        Debug.Log("Game starts...");
+        // StartCoroutine(startTheGame());
+        cameraController.moveToFirstScreen();
         yield return new WaitForSeconds(2);
-
+        Debug.Log("has started");
         hasStarted = true;
     }
-
 }

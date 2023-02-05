@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: f5bef55083546e14db407d26838b2b94
+guid: be178375254eddc4f8df960cedeab4e7
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -48,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 300
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -69,7 +69,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 8192
+    maxTextureSize: 16384
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 2
@@ -105,10 +105,10 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: WebGL
-    maxTextureSize: 8192
+    maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 2
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -119,13 +119,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: CarrotRunning_0
+      name: MixerIn_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 289.6
-        height: 290
+        width: 687
+        height: 491
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -133,20 +133,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4c99aa07e1dbaa8469b3b1fea7263933
-      internalID: 1832641950
+      spriteID: 4d925216724e2a245b5cfc4521113295
+      internalID: 1931937048
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CarrotRunning_1
+      name: MixerIn_1
       rect:
         serializedVersion: 2
-        x: 289
+        x: 687
         y: 0
-        width: 289.6
-        height: 290
+        width: 687
+        height: 491
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -154,20 +154,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6873279a34fe9f949a9e9c314422a368
-      internalID: 40278084
+      spriteID: 1d10007fb7e036045adb7133c6fd77a6
+      internalID: -21304093
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CarrotRunning_2
+      name: MixerIn_2
       rect:
         serializedVersion: 2
-        x: 578
+        x: 1374
         y: 0
-        width: 289.6
-        height: 290
+        width: 687
+        height: 491
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -175,20 +175,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 678b234a2d7fed341a8cebc792adef14
-      internalID: -1478591920
+      spriteID: 7b9bf5de9e4ee384ea1ac2638a902a3b
+      internalID: -336396884
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CarrotRunning_3
+      name: MixerIn_3
       rect:
         serializedVersion: 2
-        x: 867
+        x: 2061
         y: 0
-        width: 289.6
-        height: 290
+        width: 687
+        height: 491
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -196,20 +196,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 574196093f73d614db81c27b9e1441c4
-      internalID: -744802670
+      spriteID: 1d6b89a76f82f22428ae8b20c6a189ac
+      internalID: 1844713957
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CarrotRunning_4
+      name: MixerIn_4
       rect:
         serializedVersion: 2
-        x: 1156
+        x: 2748
         y: 0
-        width: 289.6
-        height: 290
+        width: 687
+        height: 491
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -217,20 +217,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b709ef02f522ff548ba2008486c95c0c
-      internalID: -552731760
+      spriteID: b0b8997d82977da4194be3c08d86ad17
+      internalID: 389657402
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CarrotRunning_5
+      name: MixerIn_5
       rect:
         serializedVersion: 2
-        x: 1445
+        x: 3435
         y: 0
-        width: 289.6
-        height: 290
+        width: 687
+        height: 491
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -238,20 +238,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 610dafb106db58f43abce5ccb08226df
-      internalID: 1881944714
+      spriteID: 845e8af3b44122c4f928ab4800e1ec0a
+      internalID: 830511032
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CarrotRunning_6
+      name: MixerIn_6
       rect:
         serializedVersion: 2
-        x: 1734
+        x: 4122
         y: 0
-        width: 289.6
-        height: 290
+        width: 687
+        height: 491
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -259,20 +259,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c7774f4145c3b594a9232392c5eb9eee
-      internalID: 541535078
+      spriteID: 130760a4a79280745a6377f93db7ecfd
+      internalID: 1175750965
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CarrotRunning_7
+      name: MixerIn_7
       rect:
         serializedVersion: 2
-        x: 2023
+        x: 4809
         y: 0
-        width: 289.6
-        height: 290
+        width: 687
+        height: 491
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -280,20 +280,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 24eedf6f4d1072248b4797c47ef2fa51
-      internalID: -233240879
+      spriteID: 8a7d2f452f21e5448bcf7bb3fc68561c
+      internalID: 285589197
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CarrotRunning_8
+      name: MixerIn_8
       rect:
         serializedVersion: 2
-        x: 2312
+        x: 5496
         y: 0
-        width: 289.6
-        height: 290
+        width: 687
+        height: 491
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -301,20 +301,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 473644c6ae25aea408d4e93dcd69e2dd
-      internalID: 795260258
+      spriteID: a467aa3c5a7167a468ef7cbb5a6a1790
+      internalID: -838659012
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CarrotRunning_9
+      name: MixerIn_9
       rect:
         serializedVersion: 2
-        x: 2601
+        x: 6183
         y: 0
-        width: 289.6
-        height: 290
+        width: 687
+        height: 491
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -322,20 +322,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0d72317de03ebd540af672acd14bee81
-      internalID: 777875827
+      spriteID: 958127f094cb91f4693d611d9f4f0fbb
+      internalID: -1643696581
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CarrotRunning_10
+      name: MixerIn_10
       rect:
         serializedVersion: 2
-        x: 2890
+        x: 6870
         y: 0
-        width: 289.6
-        height: 290
+        width: 687
+        height: 491
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -343,20 +343,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c11408fb62b346f44b948a9efd070623
-      internalID: 877557281
+      spriteID: f58f72e0a14d5d1418dc0c9a60a0b034
+      internalID: -1767135710
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CarrotRunning_11
+      name: MixerIn_11
       rect:
         serializedVersion: 2
-        x: 3179
+        x: 7557
         y: 0
-        width: 289.6
-        height: 290
+        width: 687
+        height: 491
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -364,20 +364,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 07a69536329b49c4583a0ce057a320f0
-      internalID: 1138061503
+      spriteID: 6a1145cad5a54754d8eb07773831ce57
+      internalID: 1510773841
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CarrotRunning_12
+      name: MixerIn_12
       rect:
         serializedVersion: 2
-        x: 3468
+        x: 8244
         y: 0
-        width: 289.6
-        height: 290
+        width: 687
+        height: 491
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -385,20 +385,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4d9505442e41dff42bb86b082d78f07e
-      internalID: 1422013822
+      spriteID: d92c02dcbf700f34f9ce17e7eb3743a4
+      internalID: 1536438655
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CarrotRunning_13
+      name: MixerIn_13
       rect:
         serializedVersion: 2
-        x: 3757
+        x: 8931
         y: 0
-        width: 289.6
-        height: 290
+        width: 687
+        height: 491
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -406,20 +406,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 12f55d2618211dc43a21b5484437d8df
-      internalID: -733778089
+      spriteID: 84ba9fabaf425804ab6e976e73b3add6
+      internalID: -516378265
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CarrotRunning_14
+      name: MixerIn_14
       rect:
         serializedVersion: 2
-        x: 4046
+        x: 9618
         y: 0
-        width: 289.6
-        height: 290
+        width: 687
+        height: 491
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -427,20 +427,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 132f8db5bf42a9845aaecb1ac267a316
-      internalID: 1289854531
+      spriteID: 2b90e0c10b47b9846885f1c02b6f9f20
+      internalID: 954192342
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CarrotRunning_15
+      name: MixerIn_15
       rect:
         serializedVersion: 2
-        x: 4335
+        x: 10305
         y: 0
-        width: 289.6
-        height: 290
+        width: 687
+        height: 491
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -448,20 +448,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 299aa9652fd62954d8ac17f2d0b3f00c
-      internalID: 1316480572
+      spriteID: 1f3fef7164f69fe449cdf0d7896261d3
+      internalID: -144244809
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CarrotRunning_16
+      name: MixerIn_16
       rect:
         serializedVersion: 2
-        x: 4624
+        x: 10992
         y: 0
-        width: 289.6
-        height: 290
+        width: 687
+        height: 491
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -469,20 +469,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 647551bc9625d9a4eaf415c6833dcf0e
-      internalID: -2038563799
+      spriteID: 11d2863f6dd8b494c9df1e9f16b2c6fa
+      internalID: -1858386410
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CarrotRunning_17
+      name: MixerIn_17
       rect:
         serializedVersion: 2
-        x: 4913
+        x: 11679
         y: 0
-        width: 289.6
-        height: 290
+        width: 687
+        height: 491
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -490,20 +490,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6061fb029ce6f0f4d990d5cb673b53d0
-      internalID: -1540831880
+      spriteID: d101fde3db659d14286ecd59e1915a07
+      internalID: 398597984
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CarrotRunning_18
+      name: MixerIn_18
       rect:
         serializedVersion: 2
-        x: 5202
+        x: 12366
         y: 0
-        width: 289.6
-        height: 290
+        width: 687
+        height: 491
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -511,20 +511,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 523f5cbda22709d4198a9f24ecfac84c
-      internalID: 1800915336
+      spriteID: 3a880caec872b3d4080cbad7970d730e
+      internalID: 1880354938
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CarrotRunning_19
+      name: MixerIn_19
       rect:
         serializedVersion: 2
-        x: 5491
+        x: 13053
         y: 0
-        width: 289.6
-        height: 290
+        width: 687
+        height: 491
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -532,8 +532,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c51748938d1b84949979eb90f5fdce44
-      internalID: 297227398
+      spriteID: 51d5f53deb2ed0943aa52c49a4be9c12
+      internalID: -1927891190
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MixerIn_20
+      rect:
+        serializedVersion: 2
+        x: 13740
+        y: 0
+        width: 687
+        height: 491
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4db9dd02e1402154caa3d6861f9ab319
+      internalID: 177062999
       vertices: []
       indices: 
       edges: []
@@ -549,26 +570,27 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      CarrotRunning_8: 795260258
-      CarrotRunning_3: -744802670
-      CarrotRunning_0: 1832641950
-      CarrotRunning_15: 1316480572
-      CarrotRunning_18: 1800915336
-      CarrotRunning_11: 1138061503
-      CarrotRunning_7: -233240879
-      CarrotRunning_16: -2038563799
-      CarrotRunning_9: 777875827
-      CarrotRunning_13: -733778089
-      CarrotRunning_14: 1289854531
-      CarrotRunning_6: 541535078
-      CarrotRunning_10: 877557281
-      CarrotRunning_12: 1422013822
-      CarrotRunning_2: -1478591920
-      CarrotRunning_4: -552731760
-      CarrotRunning_17: -1540831880
-      CarrotRunning_5: 1881944714
-      CarrotRunning_1: 40278084
-      CarrotRunning_19: 297227398
+      MixerIn_0: 1931937048
+      MixerIn_19: -1927891190
+      MixerIn_20: 177062999
+      MixerIn_12: 1536438655
+      MixerIn_4: 389657402
+      MixerIn_3: 1844713957
+      MixerIn_15: -144244809
+      MixerIn_8: -838659012
+      MixerIn_9: -1643696581
+      MixerIn_10: -1767135710
+      MixerIn_14: 954192342
+      MixerIn_2: -336396884
+      MixerIn_5: 830511032
+      MixerIn_18: 1880354938
+      MixerIn_6: 1175750965
+      MixerIn_11: 1510773841
+      MixerIn_16: -1858386410
+      MixerIn_7: 285589197
+      MixerIn_1: -21304093
+      MixerIn_17: 398597984
+      MixerIn_13: -516378265
   spritePackingTag: 
   pSDRemoveMatte: 0
   userData: 

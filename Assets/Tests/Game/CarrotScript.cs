@@ -59,12 +59,23 @@ public class CarrotScript : MonoBehaviour
                 startedRunning = true;
             }
 
-            if (transform.position.x >= MousePosition.x - 1 && transform.position.x <= MousePosition.x && MousePosition.y - transform.position.y <= 1)
+            // if (transform.position.x >= MousePosition.x - 1 && transform.position.x <= MousePosition.x && MousePosition.y - transform.position.y <= -1.47)
+            // {
+            //     destination = maxLeftPosition;
+            //     stop = true;
+            // }
+            // else if (transform.position.x <= MousePosition.x + 1 && transform.position.x >= MousePosition.x && MousePosition.y - transform.position.y <= -1.47)
+            // {
+            //     destination = maxRightPosition;
+            //     stop = true;
+            // }
+
+            if (transform.position.x >= MousePosition.x - 1 && transform.position.x <= MousePosition.x && MousePosition.y <= -1.47)
             {
                 destination = maxLeftPosition;
                 stop = true;
             }
-            else if (transform.position.x <= MousePosition.x + 1 && transform.position.x >= MousePosition.x && MousePosition.y - transform.position.y <= 1)
+            else if (transform.position.x <= MousePosition.x + 1 && transform.position.x >= MousePosition.x && MousePosition.y <= -1.47)
             {
                 destination = maxRightPosition;
                 stop = true;

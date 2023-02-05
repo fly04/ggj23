@@ -8,8 +8,6 @@ public class ClickableBowlController : MonoBehaviour
     private bool isMouseDown = false;
     private bool isMouseIn = false;
 
-
-
     private void Update()
     {
         if (CursorController.Instance.canGrab)
@@ -24,6 +22,7 @@ public class ClickableBowlController : MonoBehaviour
         isMouseDown = true;
         CursorController.Instance.SetHandClosed();
         Instantiate(draggableBowl, new Vector3(15.973f, -1.254f, 0), Quaternion.identity);
+        GameController.Instance.setSmasherScene();
         Destroy(gameObject);
     }
 
