@@ -30,6 +30,9 @@ public class CarrotScript : MonoBehaviour
     private Vector2 destination;
 
 
+    [SerializeField] float dir;
+
+
 
     // Start is called before the first frame update
     void Start()
@@ -42,7 +45,7 @@ public class CarrotScript : MonoBehaviour
         maxLeftPosition.y = floorPosition;
         maxRightPosition.x = 19f;
         maxRightPosition.y = floorPosition;
-        runDirection = Random.Range(0,2);
+        runDirection = Random.Range(0, 2);
     }
 
     // Update is called once per frame
@@ -52,7 +55,8 @@ public class CarrotScript : MonoBehaviour
         MousePosition.y = floorPosition;
         if (GameController.Instance.isMixerScene)
         {
-            if(!startedRunning){
+            if (!startedRunning)
+            {
                 StartCoroutine(changeDirection());
                 startedRunning = true;
             }
@@ -67,12 +71,15 @@ public class CarrotScript : MonoBehaviour
                 destination = maxRightPosition;
                 stop = true;
             }
-            else if (!stop){
+            else if (!stop)
+            {
 
-                if(runDirection == 1){
+                if (runDirection == 1)
+                {
                     destination = maxLeftPosition;
                 }
-                if(runDirection == 0) {
+                if (runDirection == 0)
+                {
                     destination = maxRightPosition;
                 }
 
@@ -116,15 +123,31 @@ public class CarrotScript : MonoBehaviour
         }
 
         //Anim stuff
-        if (direction == "right")
+        if (transform.position.x < maxLeftPosition.x)
         {
-            transform.localScale = new Vector3(-1.4f, 1.4f, 1.4f);
+            if (direction == "right")
+            {
+                transform.localScale = new Vector3(-2f, 2f, 2f);
+            }
+            if (direction == "left")
+            {
+                transform.localScale = new Vector3(2f, 2f, 2f);
+            }
         }
-        if (direction == "left")
+        else
         {
-            transform.localScale = new Vector3(1.4f, 1.4f, 1.4f);
-        }
+            Vector3 position = transform.position;
+            dir = destination.x - position.x;
 
+            if (dir > 0)
+            {
+                transform.localScale = new Vector3(-2f, 2f, 2f);
+            }
+            else
+            {
+                transform.localScale = new Vector3(2f, 2f, 2f);
+            }
+        }
 
         //Cursor stuff
         if (CursorController.Instance.canGrab)
@@ -160,15 +183,15 @@ public class CarrotScript : MonoBehaviour
 
     IEnumerator changeDirection()
     {
-        yield return new WaitForSeconds(Random.Range(2,3));
-        
+        yield return new WaitForSeconds(Random.Range(2, 3));
+
         stop = false;
-        runDirection = Random.Range(0,2);
-        
-        
-        
-        
-        
+        runDirection = Random.Range(0, 2);
+
+
+
+
+
         //have to add condition to stop the loop
         StartCoroutine(changeDirection());
     }
