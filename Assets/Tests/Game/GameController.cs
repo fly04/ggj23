@@ -15,6 +15,7 @@ public class GameController : MonoBehaviour
     [SerializeField] private MixerController mixerController;
     [SerializeField] private GameObject clickableBowlPrefab;
     [SerializeField] private Animator backgroundSeed;
+    [SerializeField] private GameObject mixer;
 
     [Header("Starte Menu Stuff")]
     [SerializeField] private GameObject startButton;
@@ -110,27 +111,29 @@ public class GameController : MonoBehaviour
         fsm.AddState("Scene1MixerMix", new State(
             onEnter: (state) =>
             {
-                Debug.Log("MIXING");
-                StartCoroutine(waitForMixing());
+                StartCoroutine(startMixing());
+
             }
         ));
 
         fsm.AddState("PickUpBowl", new State(
             onEnter: (state) =>
             {
+                //disable all mixer children
+                foreach (Transform child in mixer.transform)
+                {
+                    child.gameObject.SetActive(false);
+                }
+
                 Debug.Log("PickUpBowl");
-                Instantiate(clickableBowlPrefab, new Vector3(15.973f, -1.254f, 0), Quaternion.identity);
-                StartCoroutine(goToSmasher());
-            },
-            onExit: (state) =>
-            {
-                cameraController.moveToNextScreen();
+                Instantiate(clickableBowlPrefab, new Vector3(15.90268f, -1.237f, 0), Quaternion.identity);
             }
         ));
 
         fsm.AddState("Smasher", new State(
             onEnter: (state) =>
             {
+                cameraController.moveToNextScreen();
                 Debug.Log("Smasher enter");
             }
         ));
@@ -141,7 +144,7 @@ public class GameController : MonoBehaviour
         fsm.AddTransition("Scene1DigUp", "Scene1Hang", transition => plantedCarrot.GetComponent<PlantedCarrotController>().hasBeenDugUp);
         fsm.AddTransition("Scene1Hang", "Scene1FillMixer", transition => Input.anyKeyDown);
         fsm.AddTransition("Scene1Hang", "Scene1FillMixer", transition => toFillMixer);
-        fsm.AddTransition("Scene1FillMixer", "Scene1MixerMix", transition => droppedCount == 6);
+        fsm.AddTransition("Scene1FillMixer", "Scene1MixerMix", transition => droppedCount == 6); // problème ici
         fsm.AddTransition("Scene1MixerMix", "PickUpBowl", transition => mixerController.isMixDone);
         fsm.AddTransition("PickUpBowl", "Smasher", transition => toSmasher);
 
@@ -166,15 +169,37 @@ public class GameController : MonoBehaviour
         toFillMixer = true;
     }
 
-    IEnumerator waitForMixing()
-    {
-        yield return new WaitForSeconds(1.0f);
-        mixerController.mix();
-    }
-
     IEnumerator goToSmasher()
     {
         yield return new WaitForSeconds(3.0f);
         toSmasher = true;
+    }
+
+    public void setSmasherScene()
+    {
+        StartCoroutine(goToSmasher());
+    }
+
+    void destroyCarrots()
+    {
+        GameObject[] carrots = GameObject.FindGameObjectsWithTag("HangingCarrot");
+
+        for (int i = 0; i < carrots.Length; i++)
+        {
+            Destroy(carrots[i]);
+        }
+    }
+
+    IEnumerator startMixing()
+    {
+        yield return new WaitForSeconds(1.7f);
+        mixer.GetComponent<Animator>().CrossFade("MixerIn", 0.0f);
+        destroyCarrots();
+    }
+
+    private void OnGUI()
+    {
+
+        GUI.TextArea(new Rect(10, 10, 100, 20), fsm.ActiveStateName);
     }
 }

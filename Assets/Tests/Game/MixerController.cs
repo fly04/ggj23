@@ -6,11 +6,6 @@ public class MixerController : MonoBehaviour
 {
     public bool isMixDone = false;
 
-    public void mix()
-    {
-        GetComponent<Animator>().CrossFade("MixerAnim", 0.0f);
-    }
-
     public void mixAnimationFinished()
     {
         isMixDone = true;

@@ -20,6 +20,9 @@ public class FallZone : MonoBehaviour
             CursorController.Instance.SetDefault();
             CursorController.Instance.canGrab = true;
 
+            //disable gameObject
+            collision.gameObject.SetActive(false);
+
 
             if (parent.gameObject.tag == "HangingCarrot")
             {
