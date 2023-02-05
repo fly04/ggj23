@@ -32,6 +32,19 @@ public class FallZone : MonoBehaviour
                 GameController.Instance.hasDroppedCarrot = true;
                 GameController.Instance.droppedCount++;
             }
+
+            if (parent.gameObject.tag == "Bowl")
+            {
+                StartCoroutine(waitForBowlFall(parent));
+            }
         }
+    }
+
+    IEnumerator waitForBowlFall(GameObject parent)
+    {
+        Debug.Log("Bowl fall");
+        yield return new WaitForSeconds(1.0f);
+        Debug.Log("Bowl anim");
+        parent.GetComponent<Animator>().CrossFade("BowlClosed", 0.0f);
     }
 }
