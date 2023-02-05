@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 707353032ab0f4c4c960ecdffd134f13
+guid: 1376424229e5ab14cb864ef66ef591df
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -69,10 +69,10 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 2048
+    maxTextureSize: 4096
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 2
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -107,12 +107,12 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: RunningBaby_0
+      name: BabyRunning_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 289.5
+        width: 289.625
         height: 290
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -121,19 +121,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5e9e943484265c046849c260f41fd2a0
-      internalID: 729272824
+      spriteID: 36f0bd18b352c23449be44dffb89486a
+      internalID: -69372793
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: RunningBaby_1
+      name: BabyRunning_1
       rect:
         serializedVersion: 2
         x: 289
         y: 0
-        width: 289.5
+        width: 289.625
         height: 290
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -142,19 +142,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9165a033a158a6d46bd7110cde3877dd
-      internalID: 624261196
+      spriteID: 1ae2b45ed013c2040bc4cf49d66de2cb
+      internalID: 551624509
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: RunningBaby_2
+      name: BabyRunning_2
       rect:
         serializedVersion: 2
         x: 578
         y: 0
-        width: 289.5
+        width: 289.625
         height: 290
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -163,19 +163,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 60c300aae4f11e542845619d36e82f86
-      internalID: 1577527801
+      spriteID: 902de4d743eb37a44a82cb5be7b2599a
+      internalID: -1215694293
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: RunningBaby_3
+      name: BabyRunning_3
       rect:
         serializedVersion: 2
         x: 867
         y: 0
-        width: 289.5
+        width: 289.625
         height: 290
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -184,8 +184,92 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f51b4051b37f37e44a8d6096959777db
-      internalID: -1428891483
+      spriteID: 1af6b2acd5dd4d140b5b597296243e0e
+      internalID: -1960646423
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BabyRunning_4
+      rect:
+        serializedVersion: 2
+        x: 1156
+        y: 0
+        width: 289.625
+        height: 290
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b16f8fe6b3d9f414e8e278d7811a5bd0
+      internalID: 596746314
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BabyRunning_5
+      rect:
+        serializedVersion: 2
+        x: 1445
+        y: 0
+        width: 289.625
+        height: 290
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a72bd462a53e698458cf9376ea14a983
+      internalID: -297667769
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BabyRunning_6
+      rect:
+        serializedVersion: 2
+        x: 1734
+        y: 0
+        width: 289.625
+        height: 290
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 14203abbc20b67245bdc73b2d283a736
+      internalID: 1544921941
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BabyRunning_7
+      rect:
+        serializedVersion: 2
+        x: 2023
+        y: 0
+        width: 289.625
+        height: 290
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6cd6704d60a2beb439d5a698c85c16d5
+      internalID: -335161933
       vertices: []
       indices: 
       edges: []
@@ -201,10 +285,14 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      RunningBaby_0: 729272824
-      RunningBaby_1: 624261196
-      RunningBaby_3: -1428891483
-      RunningBaby_2: 1577527801
+      BabyRunning_2: -1215694293
+      BabyRunning_7: -335161933
+      BabyRunning_3: -1960646423
+      BabyRunning_4: 596746314
+      BabyRunning_0: -69372793
+      BabyRunning_1: 551624509
+      BabyRunning_6: 1544921941
+      BabyRunning_5: -297667769
   spritePackingTag: 
   pSDRemoveMatte: 0
   userData: 

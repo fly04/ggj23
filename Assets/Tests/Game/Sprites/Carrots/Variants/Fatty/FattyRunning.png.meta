@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: ae791fb5fc6957a47bcc98d14270bd9e
+guid: 5f535ccc341d4c3488afab2bf1af2ac9
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -107,7 +107,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: RunningFatty_0
+      name: FattyRunning_0
       rect:
         serializedVersion: 2
         x: 0
@@ -121,14 +121,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2ba22306754c86e4aa6ca060825de427
-      internalID: -650667297
+      spriteID: d74d7b1c0b52ff64db5a3eda838ce43c
+      internalID: -1038445456
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: RunningFatty_1
+      name: FattyRunning_1
       rect:
         serializedVersion: 2
         x: 289
@@ -142,8 +142,50 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cf7a2d78d436537429098e846ba19e0d
-      internalID: 558742053
+      spriteID: e6fbf7ad681f6a548938de8d92c14116
+      internalID: -1054226815
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FattyRunning_2
+      rect:
+        serializedVersion: 2
+        x: 578
+        y: 0
+        width: 289.5
+        height: 290
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b02c79b5cf563e449110b5adf1f9668
+      internalID: 2090212696
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FattyRunning_3
+      rect:
+        serializedVersion: 2
+        x: 867
+        y: 0
+        width: 289.5
+        height: 290
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 23fb3066ee9923042ab71ff919ddb07e
+      internalID: 141305007
       vertices: []
       indices: 
       edges: []
@@ -159,8 +201,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      RunningFatty_1: 558742053
-      RunningFatty_0: -650667297
+      FattyRunning_0: -1038445456
+      FattyRunning_3: 141305007
+      FattyRunning_1: -1054226815
+      FattyRunning_2: 2090212696
   spritePackingTag: 
   pSDRemoveMatte: 0
   userData: 

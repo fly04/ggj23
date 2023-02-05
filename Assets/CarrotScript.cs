@@ -149,6 +149,13 @@ public class CarrotScript : MonoBehaviour
             }
         }
 
+
+        if (GameController.Instance.hasDroppedCarrot && !GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).IsName("Flee"))
+        {
+            Debug.Log("Fleeing");
+            GetComponent<Animator>().CrossFade("Flee", 0.0f);
+        }
+
         //Cursor stuff
         if (CursorController.Instance.canGrab)
         {

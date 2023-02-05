@@ -25,6 +25,8 @@ public class FallZone : MonoBehaviour
             {
                 Debug.Log("HangingCarrot");
                 parent.GetComponent<HangingCarrotController>().hasBeenDropped = true;
+                GameController.Instance.hasDroppedCarrot = true;
+                GameController.Instance.droppedCount++;
             }
         }
     }

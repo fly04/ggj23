@@ -23,6 +23,8 @@ public class GameController : MonoBehaviour
     [SerializeField] private GameObject runningBaby;
     [SerializeField] private GameObject runningFatty;
     public bool isMixerScene = false;
+    public bool hasDroppedCarrot = false;
+    public int droppedCount = 0;
 
 
     void Awake()
@@ -74,7 +76,7 @@ public class GameController : MonoBehaviour
             }
         ));
 
-        fsm.AddState("Scene1Mixer", new State(
+        fsm.AddState("Scene1FillMixer", new State(
             onEnter: (state) =>
             {
                 StartCoroutine(setIsInMixerScene());
@@ -84,10 +86,18 @@ public class GameController : MonoBehaviour
             onExit: (state) => isMixerScene = false
         ));
 
+        fsm.AddState("Scene1MixerMix", new State(
+            onEnter: (state) =>
+            {
+                Debug.Log("MIXING");
+            }
+        ));
+
         fsm.AddTransition("Scene1Fall", "Scene1Grow", transition => scene1BackgroundController.isSeedPlanted);
         fsm.AddTransition("Scene1Grow", "Scene1DigUp", transition => plantedCarrot.GetComponent<PlantedCarrotController>().hasGrown);
         fsm.AddTransition("Scene1DigUp", "Scene1Hang", transition => plantedCarrot.GetComponent<PlantedCarrotController>().hasBeenDugUp);
-        fsm.AddTransition("Scene1Hang", "Scene1Mixer", transition => Input.anyKeyDown);
+        fsm.AddTransition("Scene1Hang", "Scene1FillMixer", transition => Input.anyKeyDown);
+        fsm.AddTransition("Scene1FillMixer", "Scene1MixerMix", transition => droppedCount == 6);
 
         fsm.Init();
     }

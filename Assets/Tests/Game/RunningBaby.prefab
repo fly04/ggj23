@@ -77,9 +77,17 @@ PrefabInstance:
       value: 4.5
       objectReference: {fileID: 0}
     - target: {fileID: 6189199416782070304, guid: 801430f2075e7d34d83568bce3425410, type: 3}
+      propertyPath: m_Size.x
+      value: 2.89625
+      objectReference: {fileID: 0}
+    - target: {fileID: 6189199416782070304, guid: 801430f2075e7d34d83568bce3425410, type: 3}
+      propertyPath: m_Size.y
+      value: 2.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 6189199416782070304, guid: 801430f2075e7d34d83568bce3425410, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 729272824, guid: 707353032ab0f4c4c960ecdffd134f13, type: 3}
+      objectReference: {fileID: -69372793, guid: 1376424229e5ab14cb864ef66ef591df, type: 3}
     - target: {fileID: 6994567121978337187, guid: 801430f2075e7d34d83568bce3425410, type: 3}
       propertyPath: m_Size.x
       value: 0.32605296
@@ -100,6 +108,32 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: 312d152c14b97ad43922e87c245e1241, type: 2}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7355597011238153096, guid: 801430f2075e7d34d83568bce3425410, type: 3}
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 801430f2075e7d34d83568bce3425410, type: 3}
+--- !u!1 &6440161187689792871 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3516664177234758994, guid: 801430f2075e7d34d83568bce3425410, type: 3}
+  m_PrefabInstance: {fileID: 7614952643863595061}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &2910147430781475796
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6440161187689792871}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b5a290efb8f85b145a923197087aade7, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
