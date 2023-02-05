@@ -6,6 +6,7 @@ public class CarrotScript : MonoBehaviour
 {
 
     [SerializeField] private GameObject draggableCarrot;
+    [SerializeField] private AudioSource footsteps;
 
     [SerializeField] public float moveSpeed;
     [SerializeField] public float maxMoveSpeed;
@@ -35,6 +36,7 @@ public class CarrotScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        footsteps = GetComponent<AudioSource>();
         //random float between 2 values
         moveSpeed = Random.Range(minMoveSpeed, maxMoveSpeed);
         floorPosition = transform.position.y;
@@ -177,7 +179,7 @@ public class CarrotScript : MonoBehaviour
     private void OnMouseDown()
     {
         isMouseDown = true;
-
+        footsteps.Play();
         if (!CursorController.Instance.canGrab) return;
         CursorController.Instance.canGrab = false;
         Instantiate(draggableCarrot, transform.position, Quaternion.identity);
