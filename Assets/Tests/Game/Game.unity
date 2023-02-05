@@ -152,7 +152,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &253108134
 GameObject:
@@ -280,7 +280,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &876003298
 GameObject:
@@ -386,6 +386,8 @@ MonoBehaviour:
   cameraController: {fileID: 253108138}
   mixerController: {fileID: 1919461285}
   clickableBowlPrefab: {fileID: 4807360905210845934, guid: ec5d06b39c03172438d673ea812cacef, type: 3}
+  backgroundSeed: {fileID: 2001736237}
+  startButton: {fileID: 1087778489}
   scene1BackgroundController: {fileID: 2001736236}
   plantedCarrot: {fileID: 1616559945}
   hangingCarrotOffset: 0
@@ -393,7 +395,6 @@ MonoBehaviour:
   runningCarrot: {fileID: 3516664177234758994, guid: 801430f2075e7d34d83568bce3425410, type: 3}
   runningBaby: {fileID: 6440161187689792871, guid: 4f501560ef5a55e4f936616671483b3b, type: 3}
   runningFatty: {fileID: 485891179152089766, guid: 437c256ad578cb440a88186241947f77, type: 3}
-  startButton: {fileID: 1087778489}
   isMixerScene: 0
   hasDroppedCarrot: 0
   droppedCount: 0
@@ -410,7 +411,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1059741116
 MonoBehaviour:
@@ -460,6 +461,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0b04668980765344afb0d5a4af4b9cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cameraController: {fileID: 253108138}
   hasStarted: 0
 --- !u!212 &1087778491
 SpriteRenderer:
@@ -526,7 +528,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &1087778493
 BoxCollider2D:
@@ -583,7 +585,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1467384595
 GameObject:
@@ -698,7 +700,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1616559945
 GameObject:
@@ -893,7 +895,7 @@ GameObject:
   - component: {fileID: 1714534909}
   - component: {fileID: 1714534908}
   m_Layer: 0
-  m_Name: Square (1)
+  m_Name: SmasherBackground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -941,7 +943,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 0.8349056, b: 0.8349056, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -964,7 +966,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1775765862
 GameObject:
@@ -1048,7 +1050,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1919461281
 GameObject:
@@ -1344,7 +1346,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2001736236
 MonoBehaviour:
