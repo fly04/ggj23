@@ -23,8 +23,6 @@ public class CarrotScript : MonoBehaviour
     private bool startedRunning = false;
 
     private int runDirection;
-    private bool hasToLeft;
-    private bool hasToRight;
 
     private bool stop = false;
     private Vector2 destination;
