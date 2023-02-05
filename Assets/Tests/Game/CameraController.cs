@@ -9,6 +9,11 @@ public class CameraController : MonoBehaviour
         StartCoroutine(LerpFromTo(transform.position, new Vector3(transform.position.x + 12.9f, transform.position.y, transform.position.z), 1f));
     }
 
+    public void moveToFirstScreen()
+    {
+        StartCoroutine(LerpFromTo(transform.position, new Vector3(transform.position.x, transform.position.y - 7.55f, transform.position.z), 1f));
+    }
+
     IEnumerator LerpFromTo(Vector3 pos1, Vector3 pos2, float duration)
     {
         for (float t = 0f; t < duration; t += Time.deltaTime)

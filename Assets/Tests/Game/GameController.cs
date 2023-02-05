@@ -13,6 +13,9 @@ public class GameController : MonoBehaviour
     [Header("References")]
     [SerializeField] private CameraController cameraController;
 
+    [Header("Starte Menu Stuff")]
+    [SerializeField] private GameObject startButton;
+
     /* SCENE 1 STUFF */
     [Header("Scene 1 Stuff")]
     [SerializeField] private Scene1BackgroundController scene1BackgroundController;
@@ -42,6 +45,7 @@ public class GameController : MonoBehaviour
     void Start()
     {
         fsm = new StateMachine();
+        fsm.AddState("StartMenu", new State());
         fsm.AddState("Scene1Fall", new State());
         fsm.AddState("Scene1Grow", new State(
             onEnter: (state) =>
@@ -93,6 +97,7 @@ public class GameController : MonoBehaviour
             }
         ));
 
+        fsm.AddTransition("StartMenu", "Scene1Fall", transition => startButton.GetComponent<StartMenuController>().hasStarted);
         fsm.AddTransition("Scene1Fall", "Scene1Grow", transition => scene1BackgroundController.isSeedPlanted);
         fsm.AddTransition("Scene1Grow", "Scene1DigUp", transition => plantedCarrot.GetComponent<PlantedCarrotController>().hasGrown);
         fsm.AddTransition("Scene1DigUp", "Scene1Hang", transition => plantedCarrot.GetComponent<PlantedCarrotController>().hasBeenDugUp);
