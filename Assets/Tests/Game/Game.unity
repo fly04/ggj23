@@ -446,6 +446,8 @@ MonoBehaviour:
   hangingCarrotOffset: 0
   draggableCarrot: {fileID: 3516664177234758994, guid: c0ac2fff286a08e4ca5ff5f06e9dc9a9, type: 3}
   runningCarrot: {fileID: 3516664177234758994, guid: 801430f2075e7d34d83568bce3425410, type: 3}
+  runningBaby: {fileID: 0}
+  runningFatty: {fileID: 0}
   isMixerScene: 0
 --- !u!4 &1059741115
 Transform:

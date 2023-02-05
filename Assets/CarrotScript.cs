@@ -52,13 +52,24 @@ public class CarrotScript : MonoBehaviour
     void Update()
     {
         MousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        MousePosition.y = floorPosition;
+        
         if (GameController.Instance.isMixerScene)
         {
             if (!startedRunning)
             {
                 StartCoroutine(changeDirection());
                 startedRunning = true;
+            }
+
+            if (transform.position.x >= MousePosition.x - 1 && transform.position.x <= MousePosition.x && MousePosition.y - transform.position.y <= 1)
+            {
+                destination = maxLeftPosition;
+                stop = true;
+            }
+            else if (transform.position.x <= MousePosition.x + 1 && transform.position.x >= MousePosition.x && MousePosition.y - transform.position.y <= 1)
+            {
+                destination = maxRightPosition;
+                stop = true;
             }
 
             if (transform.position.x >= maxRightPosition.x)
@@ -84,10 +95,12 @@ public class CarrotScript : MonoBehaviour
                 }
 
             }
+            
             transform.position = Vector2.MoveTowards(transform.position, destination, moveSpeed * Time.deltaTime);
         }
         else
         {
+            MousePosition.y = floorPosition;
 
             rightLimitPosition = MousePosition;
             rightLimitPosition.x += 2;
