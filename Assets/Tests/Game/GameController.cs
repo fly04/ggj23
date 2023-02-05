@@ -14,6 +14,7 @@ public class GameController : MonoBehaviour
     [SerializeField] private CameraController cameraController;
     [SerializeField] private MixerController mixerController;
     [SerializeField] private GameObject clickableBowlPrefab;
+    [SerializeField] private Animator backgroundSeed;
 
     [Header("Starte Menu Stuff")]
     [SerializeField] private GameObject startButton;
@@ -51,7 +52,13 @@ public class GameController : MonoBehaviour
     {
         fsm = new StateMachine();
         fsm.AddState("StartMenu", new State());
-        fsm.AddState("Scene1Fall", new State());
+        fsm.AddState("Scene1Fall", new State(
+            onEnter: (state) =>
+            {
+                Debug.Log("Scene1Fall");
+                backgroundSeed.CrossFade("BackgroundSeed", 0.0f);
+            }
+        ));
         fsm.AddState("Scene1Grow", new State(
             onEnter: (state) =>
             {
