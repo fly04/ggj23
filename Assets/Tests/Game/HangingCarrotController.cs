@@ -10,7 +10,7 @@ public class HangingCarrotController : MonoBehaviour
     {
         if (hasBeenDropped)
         {
-            GetComponent<Animator>().CrossFade("StillCarrot", 0.0f);
+            GetComponent<Animator>().CrossFade("Still", 0.0f);
         }
     }
 }

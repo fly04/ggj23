@@ -12,6 +12,8 @@ public class GameController : MonoBehaviour
 
     [Header("References")]
     [SerializeField] private CameraController cameraController;
+    [SerializeField] private MixerController mixerController;
+    [SerializeField] private GameObject clickableBowlPrefab;
 
     [Header("Starte Menu Stuff")]
     [SerializeField] private GameObject startButton;
@@ -87,13 +89,26 @@ public class GameController : MonoBehaviour
                 CursorController.Instance.mustHandleCarrots = true;
                 cameraController.moveToNextScreen();
             },
-            onExit: (state) => isMixerScene = false
+            onExit: (state) =>
+            {
+                isMixerScene = false;
+                CursorController.Instance.mustHandleCarrots = false;
+            }
         ));
 
         fsm.AddState("Scene1MixerMix", new State(
             onEnter: (state) =>
             {
                 Debug.Log("MIXING");
+                StartCoroutine(waitForMixing());
+            }
+        ));
+
+        fsm.AddState("PickUpBowl", new State(
+            onEnter: (state) =>
+            {
+                Debug.Log("PickUpBowl");
+                Instantiate(clickableBowlPrefab, new Vector3(15.973f, -1.254f, 0), Quaternion.identity);
             }
         ));
 
@@ -103,6 +118,7 @@ public class GameController : MonoBehaviour
         fsm.AddTransition("Scene1DigUp", "Scene1Hang", transition => plantedCarrot.GetComponent<PlantedCarrotController>().hasBeenDugUp);
         fsm.AddTransition("Scene1Hang", "Scene1FillMixer", transition => Input.anyKeyDown);
         fsm.AddTransition("Scene1FillMixer", "Scene1MixerMix", transition => droppedCount == 6);
+        fsm.AddTransition("Scene1MixerMix", "PickUpBowl", transition => mixerController.isMixDone);
 
         fsm.Init();
     }
@@ -117,6 +133,12 @@ public class GameController : MonoBehaviour
     {
         yield return new WaitForSeconds(1.0f);
         isMixerScene = true;
+    }
+
+    IEnumerator waitForMixing()
+    {
+        yield return new WaitForSeconds(1.0f);
+        mixerController.mix();
     }
 
 }
