@@ -51,6 +51,7 @@ public class CarrotScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
         MousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
         if (GameController.Instance.isMixerScene)
@@ -221,6 +222,11 @@ public class CarrotScript : MonoBehaviour
 
         //have to add condition to stop the loop
         StartCoroutine(changeDirection());
+    }
+
+    void playFootStepSound()
+    {
+        footsteps.Play();
     }
 }
 

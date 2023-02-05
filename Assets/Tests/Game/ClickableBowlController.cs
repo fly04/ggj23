@@ -8,6 +8,8 @@ public class ClickableBowlController : MonoBehaviour
     private bool isMouseDown = false;
     private bool isMouseIn = false;
 
+    public AudioSource faceChange;
+
     private void Update()
     {
         if (CursorController.Instance.canGrab)
@@ -19,6 +21,7 @@ public class ClickableBowlController : MonoBehaviour
 
     private void OnMouseDown()
     {
+        faceChange = GetComponent<AudioSource>();
         isMouseDown = true;
         CursorController.Instance.SetHandClosed();
         Instantiate(draggableBowl, new Vector3(15.973f, -1.254f, 0), Quaternion.identity);
@@ -39,5 +42,10 @@ public class ClickableBowlController : MonoBehaviour
     void OnMouseExit()
     {
         isMouseIn = false;
+    }
+
+    public void playFaceSound()
+    {
+        faceChange.Play();
     }
 }

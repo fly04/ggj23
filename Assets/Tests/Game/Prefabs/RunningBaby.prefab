@@ -64,6 +64,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2649044706045046279, guid: 801430f2075e7d34d83568bce3425410, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: b6b9c675d235a3046992166363995291, type: 3}
     - target: {fileID: 3516664177234758994, guid: 801430f2075e7d34d83568bce3425410, type: 3}
       propertyPath: m_Name
       value: RunningBaby
