@@ -16,6 +16,7 @@ public class GameController : MonoBehaviour
     [SerializeField] private GameObject clickableBowlPrefab;
     [SerializeField] private Animator backgroundSeed;
     [SerializeField] private GameObject mixer;
+    [SerializeField] private Animator handTake;
 
     [Header("Starte Menu Stuff")]
     [SerializeField] private GameObject startButton;
@@ -35,6 +36,8 @@ public class GameController : MonoBehaviour
 
     bool toFillMixer = false;
     bool toSmasher = false;
+
+    public bool bowlAnimFinished = false;
 
 
     void Awake()
@@ -138,6 +141,14 @@ public class GameController : MonoBehaviour
             }
         ));
 
+        fsm.AddState("HandTake", new State(
+            onEnter: (state) =>
+            {
+                Debug.Log("HandTake");
+                handTake.CrossFade("HandTake", 0.0f);
+            }
+        ));
+
         fsm.AddTransition("StartMenu", "Scene1Fall", transition => startButton.GetComponent<StartMenuController>().hasStarted);
         fsm.AddTransition("Scene1Fall", "Scene1Grow", transition => scene1BackgroundController.isSeedPlanted);
         fsm.AddTransition("Scene1Grow", "Scene1DigUp", transition => plantedCarrot.GetComponent<PlantedCarrotController>().hasGrown);
@@ -147,6 +158,8 @@ public class GameController : MonoBehaviour
         fsm.AddTransition("Scene1FillMixer", "Scene1MixerMix", transition => droppedCount == 6); // problème ici
         fsm.AddTransition("Scene1MixerMix", "PickUpBowl", transition => mixerController.isMixDone);
         fsm.AddTransition("PickUpBowl", "Smasher", transition => toSmasher);
+        fsm.AddTransition("Smasher", "HandTake", transition => bowlAnimFinished);
+
 
         fsm.Init();
     }
@@ -171,7 +184,7 @@ public class GameController : MonoBehaviour
 
     IEnumerator goToSmasher()
     {
-        yield return new WaitForSeconds(3.0f);
+        yield return new WaitForSeconds(2.0f);
         toSmasher = true;
     }
 
